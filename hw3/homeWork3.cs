@@ -1,4 +1,6 @@
-﻿namespace hw3
+﻿using System;
+
+namespace hw3
 {
     class Square
     {
@@ -64,6 +66,79 @@
         }
     }
 
+    class Website
+    {
+        public string Name { get; set; }
+        public string Url { get; set; }
+        public string Descrip { get; set; }
+        public string Ip { get; set; }
+        public Website(string name, string url, string descrip, string ip) 
+        {
+            Name = name;
+            Url = url;
+            Descrip = descrip;
+            Ip = ip;
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Url:  {Url}");
+            Console.WriteLine($"Descrip:\n{Descrip}");
+            Console.WriteLine($"Ip:   {Ip}");
+        }
+
+    }
+
+    class Magazine
+    { 
+        public string Name { get; set; }
+        public string FoundYear { get; set; }
+        public string Descript { get; set; }
+        public string PhoneNum { get; set; }
+        public string Email { get; set; }
+        public Magazine(string name, string year, string descrip, string phone, string email) 
+        {
+            Name=name;
+            FoundYear = year;
+            Descript = descrip;
+            PhoneNum = phone;
+            Email = email;
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Name:\t\t\t{Name}");
+            Console.WriteLine($"Year of foundation:\t{FoundYear}");
+            Console.WriteLine($"Descrip:\t\t{Descript}");
+            Console.WriteLine($"Phone number:\t\t{PhoneNum}");
+            Console.WriteLine($"Email:\t\t\t{Email}");
+        }
+    }
+
+    class Shop
+    {
+        public string Name { get; set; }
+        public string Address { get; set; }   
+        public string Descript { get; set; }
+        public string PhoneNum { get; set; }
+        public string Email { get; set; }
+        public Shop(string name, string address, string descrip, string phone, string email)
+        {
+            Name = name;
+            Address = address;
+            Descript = descrip;
+            PhoneNum = phone;
+            Email = email;
+        }
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Name:\t\t{Name}");
+            Console.WriteLine($"Address:\t{Address}");
+            Console.WriteLine($"Descrip:\t{Descript}");
+            Console.WriteLine($"Phone number:\t{PhoneNum}");
+            Console.WriteLine($"Email:\t\t{Email}");
+        }
+    }
+
     internal class homeWork3
     {
         public static void Task1() 
@@ -115,6 +190,52 @@
             }
             filter.Filter(original, filt);
 
+        }
+        public static void Task4() 
+        {
+            Console.Write("Enter name of website:  ");
+            string Name = Console.ReadLine();
+            Console.Write("Enter url of website:  ");
+            string Url = Console.ReadLine();
+            Console.Write("Enter description of website:  ");
+            string Descrip = Console.ReadLine();
+            Console.Write("Enter ip of website:  ");
+            string Ip = Console.ReadLine();
+
+            Website website = new Website(Name, Url, Descrip, Ip);
+            website.ShowInfo();
+        }
+        public static void Task5() 
+        {
+            Console.Write("Enter name of magazine:  ");
+            string Name = Console.ReadLine();
+            Console.Write("Enter year of foundation:  ");
+            string Year = Console.ReadLine();
+            Console.Write("Enter description of magazine:  ");
+            string Descrip = Console.ReadLine();
+            Console.Write("Enter phone number of magazine:  ");
+            string Phone = Console.ReadLine();
+            Console.Write("Enter email of magazine:  ");
+            string Email = Console.ReadLine();
+
+            Magazine magazine = new Magazine(Name, Year, Descrip, Phone, Email);
+            magazine.ShowInfo();
+        }
+        public static void Task6() 
+        {
+            Console.Write("Enter name of shop:  ");
+            string Name = Console.ReadLine();
+            Console.Write("Enter address of shop:  ");
+            string Address = Console.ReadLine();
+            Console.Write("Enter description of shop:  ");
+            string Descrip = Console.ReadLine();
+            Console.Write("Enter phone number of shop:  ");
+            string Phone = Console.ReadLine();
+            Console.Write("Enter email of shop:  ");
+            string Email = Console.ReadLine();
+
+            Shop shop = new Shop(Name, Address, Descrip, Phone, Email);
+            shop.ShowInfo();
         }
     }
 }
